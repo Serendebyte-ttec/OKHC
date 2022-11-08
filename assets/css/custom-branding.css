@@ -1,0 +1,158 @@
+.sidebar[data-color="white"] .logo::after, .off-canvas-sidebar[data-color="white"] .logo::after {
+    background-color: #fdb81e;
+    opacity: 1;
+   
+}
+
+.main-panel {
+  
+    background-color: #e6ebed;
+
+}
+
+.sidebar .sidebar-wrapper, .off-canvas-sidebar .sidebar-wrapper {
+    overflow:hidden;
+    }
+
+.sidebar .sidebar-wrapper li.active > a:not([data-toggle="collapse"])::after, .sidebar .sidebar-wrapper li.active > [data-toggle="collapse"] + div .nav li::after {
+
+    border-right: 17px solid 
+
+#e6ebed;
+
+}
+
+.sidebar[data-active-color="danger"] .nav li.active > a, .sidebar[data-active-color="danger"] .nav li.active > a i, .sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"], .sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"] i, .sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"] ~ div > ul > li.active .sidebar-mini-icon, .sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"] ~ div > ul > li.active > a, .off-canvas-sidebar[data-active-color="danger"] .nav li.active > a, .off-canvas-sidebar[data-active-color="danger"] .nav li.active > a i, .off-canvas-sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"], .off-canvas-sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"] i, .off-canvas-sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"] ~ div > ul > li.active .sidebar-mini-icon, .off-canvas-sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"] ~ div > ul > li.active > a {
+    color: 
+    #1b3e6e;
+    font-weight: 700;
+}
+
+*{
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.sidebar .logo::after, .off-canvas-sidebar .logo::after {
+ 
+    height: 1px;
+    
+}
+
+
+.navbar.navbar-transparent a:not(.dropdown-item):not(.btn) {
+    color: 
+    #1b3e6e;
+}
+
+
+
+.ml-auto, .mx-auto {
+    margin-left: auto !important;
+}
+.mr-auto, .mx-auto {
+    margin-right: auto !important;
+}
+
+
+.btn-primary {
+    background-color: #1b3e6e;
+    color: #FFFFFF;
+}
+
+.mashup{
+
+        background:url(../img/Ring-Preloader.gif) center center no-repeat;
+        background-size: 400px 270px;
+}
+
+
+.main-panel{
+    min-height: 100vh;
+}
+
+
+#displayinfo{
+
+    background: #ecf0f1!important;  /* fallback for old browsers */
+}
+
+.sidebar .nav li > a, .off-canvas-sidebar .nav li > a {
+  
+    font-size: 14px;
+
+}
+
+
+div.main-page-content{
+padding-top:20px;
+    color:#1e1e1e;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
+}
+
+.main-page-content h3{
+
+    color:#046b99;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+.main-page-content h2{
+font-size: 25px;
+    font-weight:300;
+    margin-bottom: 15px;
+    color:#174274;
+}
+
+.ch-main{
+    padding-top:20px;
+}
+
+.col-md-4 i{
+padding-top:20px;
+padding-bottom:20px;
+color:white;
+    font-size:50px;
+    text-align: center;
+
+}
+
+.col-md-4 p{
+
+   padding-left:20px;
+   padding-right:20px;
+   text-align: center;
+   padding-bottom: 10px;
+
+
+}
+
+.col-md-4 .card{
+    background: #1b3e6e !important;
+background: -webkit-linear-gradient(to right, #1b3e6e, #005C97) !important;
+background: linear-gradient(to right, #1b3e6e, #005C97) !important;
+color:white;
+margin-bottom: 0px;
+
+}
+
+.col-md-4 .content{
+    height: 190px;
+}
+
+.navbar.navbar-transparent {
+    background-color: #174274!important;
+    box-shadow: none;
+        border-bottom: 2px solid #fdb81e;
+}
+.navbar.navbar-transparent a:not(.dropdown-item):not(.btn) {
+    color:white;
+}
+
+.sidebar[data-active-color="danger"] .nav li.active > a, .sidebar[data-active-color="danger"] .nav li.active > a i, .sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"], .sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"] i, .sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"] ~ div > ul > li.active .sidebar-mini-icon, .sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"] ~ div > ul > li.active > a, .off-canvas-sidebar[data-active-color="danger"] .nav li.active > a, .off-canvas-sidebar[data-active-color="danger"] .nav li.active > a i, .off-canvas-sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"], .off-canvas-sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"] i, .off-canvas-sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"] ~ div > ul > li.active .sidebar-mini-icon, .off-canvas-sidebar[data-active-color="danger"] .nav li.active > a[data-toggle="collapse"] ~ div > ul > li.active > a {
+    color: #1b3e6e;
+    font-weight: 500;
+}

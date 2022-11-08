@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/globalpayments/rxp-js/dist/rxp-js.js"></script>
+    <script>
+
+        var json=`{"MERCHANT_ID":"dev313275142802982119","ACCOUNT":"internet","AMOUNT":"36","CURRENCY":"USD","AUTO_SETTLE_FLAG":"1","PM_METHODS":"cards","HPP_POST_DIMENSIONS":"https:\/\/ok-sbyte.netlify.app","HPP_POST_RESPONSE":"https:\/\/ok-sbyte.netlify.app","ORDER_ID":"mqd7hu20etba63ow5x984k","TIMESTAMP":"20210108064340","SHA1HASH":"7eef7e98a3dbaa1e086e099b75762386e7f2ba91","MERCHANT_RESPONSE_URL":""}`;
+var pjson=JSON.parse(json);
+        RealexHpp.setHppUrl('https://pay.sandbox.realexpayments.com/pay');
+
+        // get the HPP JSON from the server-side SDK
+        $(document).ready(function () {
+           
+            /*
+            $.getJSON("http://kadibuwptry.16mb.com/payment/pay.php", function (jsonFromServerSdk) {
+                RealexHpp.embedded.init(
+                    "payButtonId",
+                    "targetIframe",
+                    "https://dev.rlxcarts.com/mobileSDKsV2/response.php",
+                    jsonFromServerSdk
+                );
+                $('body').addClass('loaded');
+            }); 
+
+           
+*/
+            RealexHpp.embedded.init(
+                    "payButtonId",
+                    "targetIframe",
+                    "",
+                    pjson
+                );
+
+            
+            if (window.addEventListener) {
+        window.addEventListener('message', receiveMessage, false);
+      } else {
+        window.attachEvent('message', receiveMessage);
+      }
+   
+            function receiveMessage(){
+            alert("event");
+            }
+                      
+               // $('#payButtonId').click();
+        });
+    </script>
+</head>
+<body>
+   <input type="button" id="payButtonId" value="Checkout Now" /> 
+
+    
+
+    <br />
+    <iframe id="targetIframe" height="550px" style="display:none;"></iframe>
+    
+   
+    
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
+<meta charset="UTF-8">
+<title>Login | Oklahoma Self Service</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css" rel="stylesheet"/>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+[v-cloak] * {
+  display: none;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#loginPage {
+  background-color: #3BC2FA;
+}
+
+.outer-box {
+  background-color: #414042;
+  border-radius: 4px;
+  height: 400px;
+  position: relative;
+  box-shadow: 0px 10px 50px 0px rgba(33, 33, 33, 0.65);
+}
+@media (max-width: 960px) {
+  .outer-box {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.inner-box {
+  background-color: #fff;
+  border-radius: 4px;
+  height: 450px;
+  width: 50%;
+  position: absolute;
+  top: -25px;
+  transition: all 700ms ease;
+  backface-visibility: hidden;
+  border-bottom: 3px solid #414042;
+}
+@media (max-width: 960px) {
+  .inner-box {
+    width: 100%;
+    border-radius: 4px 4px 0px 0px;
+    border-color: #71B4CC;
+  }
+}
+
+.front-card, .back-card {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  transition: all 0.5s ease-in;
+}
+
+.inner-box.v.flip .front-card {
+  transform: rotateX(180deg);
+}
+
+.inner-box.v.flip .back-card {
+  transform: rotateX(0deg);
+}
+
+.inner-box.v .back-card {
+  transform: rotateX(-180deg);
+}
+
+.left-panel {
+  left: 35px;
+  box-shadow: -4px 5px 10px rgba(132, 132, 132, 0.15);
+}
+@media (max-width: 960px) {
+  .left-panel {
+    left: 0;
+  }
+}
+
+.right-panel {
+  left: -35px;
+  box-shadow: 4px 5px 10px rgba(132, 132, 132, 0.15);
+}
+@media (max-width: 960px) {
+  .right-panel {
+    right: 0;
+  }
+}
+
+.back-panel {
+  color: #fff;
+  text-align: center;
+  padding: 0 50px;
+  display: block;
+}
+@media (max-width: 960px) {
+  .back-panel {
+    display: none;
+  }
+}
+
+.sign-in-form {
+  color: #414042;
+  margin-top: 20px;
+}
+
+.sign-in-input {
+  color: #757575;
+  transition: all 500ms ease;
+  font-size: 19px;
+  display: inline;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #757575;
+  margin-bottom: 1.5em;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.options {
+  padding-top: 20px;
+}
+
+.push-pull {
+  transform: translateX(100%);
+}
+
+.header-text {
+  color: #6fb4cd;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: #0d85b1;
+  border-color: #0d85b1;
+}
+.btn-primary:hover {
+  background-color: #6fb4cd ;
+}
+
+.option-link {
+  transition: all 500ms ease;
+  color: #757575;
+  display: inline-block;
+  text-align: center;
+}
+.option-link:hover {
+  color: #6fb4cd;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mobile-admin-toggle {
+  background-color: #62696B;
+  border-radius: 0px 0px 4px 4px;
+  position: absolute;
+  bottom: -60px;
+  color: #fff;
+  text-align: right;
+  height: 35px;
+  display: none;
+}
+.mobile-admin-toggle p {
+  display: inline-block;
+}
+.mobile-admin-toggle p:hover {
+  color: #B2D6E4;
+  cursor: pointer;
+}
+@media (max-width: 960px) {
+  .mobile-admin-toggle {
+    display: block;
+  }
+}
+
+</style>
+
+</head>
+<body>
+
+    <div id="loginPage" class="h-100" v-cloak>
+        <div class="container h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-10">
+                    <div class="outer-box">
+                        <div class="container h-100">
+                            <div class="row align-items-center h-100">
+                                <div class="col-6 back-panel" id="back-panel-left">
+
+                                    <img src="assets/img/Oklahoma_White.png"> <br><br><br>
+                                    <p style="font-size: 18px">You are attempting to log into the Self Service Portal as a Provider.</p>
+                                    <h3 style="font-weight: 300;">Not Provider? </h3>
+                                    <button class="btn btn-primary" id="toggle-panel-left" @click="slideInnerBox('Member')">Login as Member &#8592</button>
+                                </div>
+                                <div class="col-6 back-panel" id="back-panel-right">
+                                    <img src="assets/img/Oklahoma_White.png"> <br><br><br>
+                                    <p style="font-size: 18px">You are attempting to log into the Self Service Portal as a Member.</p>
+                                    <h3 style="font-weight: 300;" >Not a Member?</h3>
+                                    <button class="btn btn-primary" id="toggle-panel-right" @click="slideInnerBox('Provider')">&#8594 Login as Provider</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="inner-box v" v-bind:class="{ 'left-panel': onLeft && !mobile, 'right-panel push-pull': onRight && !mobile, 'flip' : signupActive && onLeft }">
+                            <div class="front-card">
+                                <h1 class="header-text" style="font-weight: 300;">{{ title }} Login</h1>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-10">
+                                          <div v-if="reason" id="wrngpswrd" class="alert alert-danger" role="alert">
+                                            Incorrect username or password
+                                          </div>
+                                            <form class="sign-in-form" method="GET" action="dashboard.html">
+                                                
+        
+                                                <input id="email" type="text" class="form-control sign-in-input" name="username" value="" required autofocus placeholder="Username">
+        
+        
+                                                <input id="password" type="password" class="form-control sign-in-input" required placeholder="Password">
+        
+                                                <button type="submit" class="btn btn-success btn-lg btn-block">Log In</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                 
+                                  
+                                    <div class="row justify-content-center options">
+                                        <div class="col-sm-12 col-5 text-center">
+                                            <p class="option-link"><a href="#" class="option-link">Forgot password?</a></p>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        
+        
+                            <div class="back-card">
+                                <h1 class="header-text">Signing up?</h1>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-10">
+                                            <form class="sign-in-form" action="{{ route('register') }}">
+                                                
+        
+                                                <div class="form-group">
+                            
+                                                        <div class="col">
+                                                            <input id="name" type="text" class="form-control sign-in-input" name="name" value="" required autofocus placeholder="Name">
+                            
+                                                        </div>
+                                                    </div>
+                            
+                                                    <div class="form-group">
+        
+                            
+                                                        <div class="col">
+                                                            <input id="email" type="email" class="form-control sign-in-input" name="email" value="" required placeholder="Email Address">
+        
+                                                        </div>
+                                                    </div>
+                            
+                                                    <div class="form-group">
+                            
+                                                        <div class="col">
+                                                            <input id="password" type="password" class="form-control sign-in-input" name="password" required placeholder="Password">
+        
+                                                        </div>
+                                                    </div>
+                            
+                                                    <div class="form-group">
+                            
+                                                        <div class="col">
+                                                            <input id="password-confirm" type="password" class="form-control sign-in-input" name="password_confirmation" required placeholder="Confirm Password">
+                                                        </div>
+                                                    </div>
+                            
+                                                    <div class="form-group">
+                                                        <div class="col">
+                                                            <button type="submit" class="btn btn-primary">
+                                                                Register
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 offset-6 text-center">
+                                        <p class="option-link right align-bottom" v-show="onLeft && signupActive" @click="signIn()">Wait, I have an account...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container mobile-admin-toggle">
+                            <div class="row">
+                                <div v-if="onLeft" class="col" @click="changeMobileTitle('Provider')"><p>Not a Member? Login as an Provider &#8594</p></div>
+                                <div v-else class="col" @click="changeMobileTitle('Member')"><p>Not an Provider? Login as an Member &#8594</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <script>
+
+          
+function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  }
+  console.log('Query Variable ' + variable + ' not found');
+}
+var reason = getQueryVariable("reason");
+
+            var app = new Vue({
+            el: '#loginPage',
+            data: {
+                title: 'Member',
+                onLeft: true,
+                onRight: false,
+                signupActive: false,
+                mobile: false,
+            },
+            methods: {
+                slideInnerBox: function(title) {
+                    this.mobile = false;
+                    this.title = title;
+                    this.onLeft = !this.onLeft;
+                    this.onRight = !this.onRight;
+                    this.signupActive = false;
+                },
+                createAccount: function() {
+                    this.signupActive = true;
+                },
+                signIn: function() {
+                    this.signupActive = false;
+                },
+                changeMobileTitle: function (title) {
+                    this.mobile = true;
+                    this.title = title;
+                    this.onLeft = !this.onLeft;
+                    this.onRight = !this.onRight;
+                    this.signupActive = false;
+                }
+            }
+        });
+        </script>
+</body>
+</html>
