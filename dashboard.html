@@ -1,49 +1,139 @@
-<html>
-<head><meta charset="utf-8">  
-        <title>Health Care</title>  
-        <title>Welcome to U+ Health!</title>    
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./healthcare/css/healthcare.css">
-        <link href="./css/chunk-common.b6e72eca.css" rel="preload" as="style">
-        <link href="./css/chunk-common.b6e72eca.css" rel="stylesheet">
-        <script src="js/PegaHelperExtension.js"></script>
-        <script src="js/test_trigger.js"></script>
-        <script src ='https://ipdemo.sbyteapps.com/prweb/app/TTECHCProviderSelfService_1392/?pyActivity=pzIncludeMashupScripts'></script>
-        <script>
-        function goToHome()
-        {
-        pega.web.api.doAction("PegaGadget", "logoff");
-        var cookies = document.cookie.split(";");
-        for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        var eqPos = cookie.indexOf("=");
-        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-        }
-        location.href = "index.html";   
-        }
-        </script>
-</head>
-<body>
-        <div class="form flex flex-col">
-        <header class="flex flex-col">
-        <div class="wrap header flex">
-        <a href="Home.html"><img src="./img/tteclogo.png" alt="U+" class="logo"></a>
-        <nav class="flex-grow-1">
-        <ul class="flex flex-mid-align flex-grow-1">
-        <li><a href="#">Individual</a></li>
-        <li><a href="#">Family</a></li>
-        <li><a href="#">Medicare</a></li>
-        <li><a href="#">Health & Wellness</a></li>
-        </ul></nav>
-        <a onclick= "return goToHome()" class="simple"> Log out </a>
-        </div>
-        </header>
-        <main>
-        <div class="col col-4 primary-card">
-            <!-- ********************** Begin Pega content ********************** -->
+<!doctype html>
+<html lang="en">
 
-<div data-pega-gadgetname ='PegaGadget' 
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="./assets/img/Oklahoma.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Oklahoma Govt Self Service Portal
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+  <link href="./assets/demo/demo.css" rel="stylesheet" />
+  <link href="assets/css/custom-branding.css" rel="stylesheet" />
+<script id="pega-wm-chat" src="https://widget.use1.chat.pega.digital/a2881074-011f-4e8b-b804-d13123abeabf/widget.js"></script>
+<script src ='https://ipdemo.sbyteapps.com/prweb/app/TTECHCProviderSelfService_1392/?pyActivity=pzIncludeMashupScripts'></script>
+  <style>
+    .main-panel {
+
+      background-color: #fefefe !important;
+
+    }
+
+
+    .sidebar .sidebar-wrapper li.active>a:not([data-toggle="collapse"])::after,
+    .sidebar .sidebar-wrapper li.active>[data-toggle="collapse"]+div .nav li::after {
+
+      border-right: 17px solid #fff;
+
+    }
+    .main-panel > .content {
+    padding: 0px;
+    min-height: calc(100vh - px);
+    margin-top: 93px;
+}
+  </style>
+
+
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+      <div class="logo">
+
+        <a href="dashboard.html" class="simple-text logo-normal">
+
+          <div class="logo-image-big text-center">
+            <img src="assets/img/Oklahoma.png" title="Oklahoma Govt" style="width: 60%;">
+          </div>
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="active ">
+            <a href="dashboard.html">
+              <i class="nc-icon nc-world-2" style="margin-right: 5px;"></i>
+              <p>Home</p>
+            </a>
+          </li>
+          <li>
+            <a href="member.html">
+              <i class="nc-icon nc-single-02" style="margin-right: 5px;"></i>
+              <p>Update Member profile</p>
+            </a>
+          </li>
+          <li>
+            <a href="license.html">
+              <i class="nc-icon nc-badge" style="margin-right: 5px;"></i>
+              <p>Update License details</p>
+            </a>
+          </li>
+
+          <hr>
+          <li>
+            <a href="?logout=true">
+              <i class="nc-icon nc-button-power" style="margin-right: 5px;"></i>
+              <p>Logout</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" style="font-weight:700;">Welcome <span id="UserType"></span></a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+            aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-md-12">
+
+              <div class="mashup" id="provider_mash" data-pega-gadgetname='PegaGadget' data-pega-action='display'
+                data-pega-action-param-harnessname='DisplayProviderDetails'
+                data-pega-action-param-classname='TTECHC-CS-Work-Grp1-UpdatePractitionerLicenses'
+                data-pega-action-param-model='' data-pega-action-param-readonly='true' data-pega-isdeferloaded='false'
+                data-pega-applicationname='HCSelfServiceApp' data-pega-threadname='PractitionerLicense'
+                data-pega-resizetype='stretch'
+                data-pega-action-param-parameters='{"UserIdentifier":"ProviderHarness","Password":"cnVsZXM=","pzSkinName":"HCSelfServiceApp","pyMashupSkeletonName":"pyDefaultMashupSkeleton"}'
+                data-pega-redirectguests='false'
+                data-pega-url='https://ipdemo.sbyteapps.com/prweb/app/HCSelfServiceApp_4616/'></div>
+
+                    
+                    
+                    <!-- ********************** Begin Pega content ********************** -->
+
+<div class="mashup"  id="member_mash" data-pega-gadgetname ='PegaGadget' 
 data-pega-action ='display' 
 data-pega-action-param-harnessname ='DisplayMemberDetails' 
 data-pega-action-param-classname ='TTECHC-CS-Work-Grp1-UpdateContactName' 
@@ -58,20 +148,104 @@ data-pega-url ='https://ipdemo.sbyteapps.com/prweb/app/TTECHCProviderSelfService
 data-pega-action-param-parameters ='{"pzSkinName":"HCSelfServiceApp","pyMashupSkeletonName":"pyDefaultMashupSkeleton","UserIdentifier":"MemberHarness","Password":"cnVsZXM="}' ></div>
 
 <!-- ********************** End Pega content ********************** -->
-        </div>
-        </main>
-        <footer class="">
-        <div class="wrap flex">
-          <nav>
-            <div class="flex">
-              <a>About us</a>
-              <a>Reviews</a>
-              <a>Privacy</a>
-              <a href="./settings.html"> Settings </a>
+
+<!--
+                <iframe src="mashup.html" id="member_360" frameborder="0" width="100%" height="100%"></iframe>
+
+-->
+
+
+              <div class="row" id="box_content">
+
+                <div class="col-md-4">
+                  <div class="card">
+
+                    <div class="content">
+
+                      <div class="d-flex justify-content-center"> <i class="nc-icon nc-circle-10"></i></div>
+
+                      <p>Now you can update your profile directly from <b>Self Service Portal</b></p>
+
+
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+
+                    <div class="content">
+
+
+                      <div class="d-flex justify-content-center"><i class="nc-icon nc-support-17"></i></div>
+
+                      <p>For support, Email your message to: <b>support@ok.org</b>
+                      </p>
+
+
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+
+                    <div class="content">
+
+
+                      <div class="d-flex justify-content-center"> <i class="nc-icon nc-chat-33"></i></div>
+                      <p>Use "Need Help?" button below to chat with an agent and resolve your issue instantly   </p>
+
+
+
+
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
             </div>
-          </nav>
+
+
+          </div>
         </div>
-        </footer>
-        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    var loggedUser = localStorage.getItem("username");
+    if (loggedUser == undefined) {
+      window.location.replace("index.html?reason=wrongpassword");
+    }
+
+    if (loggedUser == "lisa") {
+      document.getElementById("UserType").innerHTML = "Dr. Lisa Binder";
+
+      document.getElementById("member_mash").style.display = "none";
+      document.getElementById("member_360").style.display = "none";
+
+
+    } else {
+      document.getElementById("UserType").innerHTML = "Thomas Brown";
+      document.getElementById("provider_mash").style.display = "none";
+      document.getElementById("box_content").style.display = "none";
+
+
+
+    }
+  </script>
+
+  <!--   Core JS Files   -->
+  <script src="./assets/js/core/jquery.min.js"></script>
+  <script src="./assets/js/core/popper.min.js"></script>
+  <script src="./assets/js/core/bootstrap.min.js"></script>
+  <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="./assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>
 </body>
+
 </html>
