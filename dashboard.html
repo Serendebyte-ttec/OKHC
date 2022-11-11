@@ -203,28 +203,7 @@ data-pega-action-param-parameters ='{"pzSkinName":"HCSelfServiceApp","pyMashupSk
 
   </div>
 
-  <script>
-    var loggedUser = localStorage.getItem("username");
-    if (loggedUser == undefined) {
-      window.location.replace("dashboard.html");
-    }
-
-    if (loggedUser == "lisa") {
-      document.getElementById("UserType").innerHTML = "Dr. Lisa Binder";
-
-      document.getElementById("member_mash").style.display = "none";
-      document.getElementById("member_360").style.display = "none";
-
-
-    } else {
-      document.getElementById("UserType").innerHTML = "Thomas Brown";
-      document.getElementById("provider_mash").style.display = "none";
-      document.getElementById("box_content").style.display = "none";
-
-
-
-    }
-  </script>
+ 
 
   <!--   Core JS Files   -->
   <script src="./assets/js/core/jquery.min.js"></script>
