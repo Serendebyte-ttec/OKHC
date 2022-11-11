@@ -22,7 +22,10 @@
   <link href="assets/css/custom-branding.css" rel="stylesheet" />
   <script src='https://ipdemo.sbyteapps.com/prweb/app/default/?pyActivity=pzIncludeMashupScripts'></script>
   <script src="assets/js/custom.js"></script>
- <script id="pega-wm-chat" src="https://widget.use1.chat.pega.digital/a2881074-011f-4e8b-b804-d13123abeabf/widget.js"></script>
+  <script src='PegaChat/PegaHelper.js'></script>
+  <script src='PegaChat/PegaHelperExtension.js'></script>
+  <link rel="stylesheet" type="text/css" href="PegaChat/PegaStyles.css?nocache=20200811T095749.819GMT">
+
   <style>
     .main-panel {
 
@@ -119,42 +122,27 @@
 
           <div class="row">
             <div class="col-md-12">
-<!-- ********************** Begin Pega content ********************** -->
-<script src ='https://ipdemo.sbyteapps.com/prweb/app/TTECHCProviderSelfService_0427/?pyActivity=pzIncludeMashupScripts'></script>
-<div data-pega-gadgetname ='PegaGadget' 
-data-pega-action ='display' 
-data-pega-action-param-harnessname ='DisplayProviderDetails' 
-data-pega-action-param-classname ='TTECHC-CS-Work-Grp1-UpdatePractitionerLicenses' 
-data-pega-action-param-model ='' 
-data-pega-action-param-readonly ='true' 
-data-pega-isdeferloaded ='false' 
-data-pega-applicationname ='TTECHCProviderSelfService' 
-data-pega-threadname ='PractitionerLicense' 
-data-pega-channelID ='MASHUP6efd861af3b64e0485fd638d4f4a73d8' 
-data-pega-resizetype ='stretch' 
-data-pega-url ='https://ipdemo.sbyteapps.com/prweb/app/TTECHCProviderSelfService_0427/' 
-data-pega-action-param-parameters ='{"pzSkinName":"HCSelfServiceApp","pyMashupSkeletonName":"pyDefaultMashupSkeleton","UserIdentifier":"ProviderHarness","Password":"cnVsZXM="}' ></div>
 
-<!-- ********************** End Pega content ********************** -->
+              <div class="mashup" id="provider_mash" data-pega-gadgetname='PegaGadget' data-pega-action='display'
+                data-pega-action-param-harnessname='DisplayProviderDetails'
+                data-pega-action-param-classname='TTECHC-CS-Work-Grp1-UpdatePractitionerLicenses'
+                data-pega-action-param-model='' data-pega-action-param-readonly='true' data-pega-isdeferloaded='false'
+                data-pega-applicationname='HCSelfServiceApp' data-pega-threadname='PractitionerLicense'
+                data-pega-resizetype='stretch'
+                data-pega-action-param-parameters='{"UserIdentifier":"ProviderHarness","Password":"cnVsZXM=","pzSkinName":"HCSelfServiceApp","pyMashupSkeletonName":"pyDefaultMashupSkeleton"}'
+                data-pega-redirectguests='false'
+                data-pega-url='https://ipdemo.sbyteapps.com/prweb/app/HCSelfServiceApp_4616/'></div>
 
 
-<!-- ********************** Begin Pega content ********************** -->
-<script src ='https://ipdemo.sbyteapps.com/prweb/app/TTECHCProviderSelfService_1392/?pyActivity=pzIncludeMashupScripts'></script>
-<div data-pega-gadgetname ='PegaGadget' 
-data-pega-action ='display' 
-data-pega-action-param-harnessname ='DisplayMemberDetails' 
-data-pega-action-param-classname ='TTECHC-CS-Work-Grp1-UpdateContactName' 
-data-pega-action-param-model ='' 
-data-pega-action-param-readonly ='true' 
-data-pega-isdeferloaded ='true' 
-data-pega-applicationname ='TTECHCProviderSelfService' 
-data-pega-threadname ='MemberProfile' 
-data-pega-channelID ='MASHUP16f0f3cf04ef4b438e625e501a2206b4' 
-data-pega-resizetype ='stretch' 
-data-pega-url ='https://ipdemo.sbyteapps.com/prweb/app/TTECHCProviderSelfService_1392/' 
-data-pega-action-param-parameters ='{"pzSkinName":"HCSelfServiceApp","pyMashupSkeletonName":"pyDefaultMashupSkeleton","UserIdentifier":"MemberHarness","Password":"cnVsZXM="}' ></div>
-
-<!-- ********************** End Pega content ********************** -->
+              <div class="mashup"  id="member_mash" data-pega-gadgetname='PegaGadgets' data-pega-action='display' style="width:100%;height:1280px;overflow-x: hidden;"
+                data-pega-action-param-harnessname='DisplayMemberDetails'
+                data-pega-action-param-classname='TTECHC-CS-Work-Grp1-UpdateContactName' data-pega-action-param-model=''
+                data-pega-action-param-readonly='true' data-pega-isdeferloaded='false'
+                data-pega-applicationname='HCSelfServiceApp' data-pega-threadname='MemberProfile'
+                data-pega-resizetype='fixed'
+                data-pega-action-param-parameters='{"UserIdentifier":"MemberHarness","Password":"cnVsZXM=","pzSkinName":"HCSelfServiceApp","pyMashupSkeletonName":"pyDefaultMashupSkeleton"}'
+                data-pega-redirectguests='false'
+                data-pega-url='https://ipdemo.sbyteapps.com/prweb/app/HCSelfServiceApp_6953/'></div>
 
 
 <!--
